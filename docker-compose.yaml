@@ -1,0 +1,40 @@
+version: "3.2"
+
+services:
+    db:
+      image: postgres:13.0-alpine
+      restart: always
+      volumes:
+        - './pg_data:/var/lib/posgresql'
+      environment:
+        POSTGRES_PASSWORD: ${DB_PASS}
+        POSTGRES_USER: ${DB_USER}
+        POSTGRES_DB: ${DB_NAME}
+      ports:
+        - ${PORT_DB}
+      networks:
+        - prueba-net
+
+    back:
+      build: ./backend
+      env_file:
+        - .env
+      ports:
+        - ${PORT_BACK}
+      depends_on:
+        - db
+      networks:
+        - prueba-net
+
+    front:
+      build: ./frontend
+      ports:
+        - ${PORT_FRONT}
+      networks:
+        - prueba-net
+
+volumes:
+  pg_data:
+
+networks:
+  prueba-net:

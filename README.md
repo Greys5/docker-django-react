@@ -1,0 +1,36 @@
+###Dockerizar aplicación Django-React y Hacer Deploy de Docker-compose en local:
+
+-1- Clonar el repositorio del código de la dirección:
+            > https://github.com/Greys5/docker-django-react.git
+            
+-2- Instalar Docker/ docker compose para poder ejecutar los comandos desde local:
+        - https://docs.docker.com/engine/install/
+        - https://docs.docker.com/compose/install/
+
+-3- Una vez instalado , verificar la instalación: 
+    Ejecutar:
+       > docker --version 
+       > docker-compose --version
+
+
+-4- Revisar y/o modificar el archivo .env en el cuál se encuentran las variables con los valores para la base de datos -en este caso postgreSql-, de puertos para los servicios y settings del back.
+
+-5- Una vez realizada la verificación y/o modificación de variables necesarias, (ubicados en el path: docker-app/django-app ) ejecutar el comando : 
+        > docker compose config
+    [El comando ejecutará una revisión de la configuración del archivo docker-compose.yaml y se visualizará en el terminal la configuración con las variables indicadas o en su caso si hace falta alguna variable requerida.]
+Luego ejecutamos:
+        > docker-compose build
+    [Dicho comando buildea los servicios indicados en el docker-compose.yaml que son: el dockerfile ubicado en el folder back, dockerfile ubicado en el folder front y levantará el servicio de la DB indicada en el docker-compose.yaml]
+
+-6- Una vez creadas las imagenes de los servicios, ejecutar el comando:
+        > docker-compose up
+    - El cuál puede ir con el flag -d (docker-compose up -d) para ejecutarse en background y no quedé atado a la terminal
+
+-7- Verificar el funcionamiento de los servicios desde la dirección local en el navegador:
+        https://localhost:puerto
+
+
+
+*Se puede verificar el ingreso correcto a la base de datos ejecuntando en consola con el DB_USER y DB_NAME indicados:
+    Ejemplo:
+        > docker-compose exec db psql --username=postgres --dbname=postgres
