@@ -67,13 +67,12 @@ t2 micro.
 
         > docker-compose up --build -d
 
--5- Se crea una Elastic Ip, y se asocia con la instancia en la cuál quedaron corriendo los servicios levantados de Docker.
 
--6- Se configuran las reglas de firewall y security group para poder ingresar desde la IP externa.
+-6- Se configuran las reglas de firewall y security group asociados a la instancia para habilitar el uso de la IP externa.
 
--7- Verificamos el funcionamiento del servicio desde ip-externa:puerto o desde la consola"
+-7- Verificar el funcionamiento del servicio desde ip-externa:puerto ejem: http://54.173.213.111:8000/ o desde la consola:
 
-    -(En este caso):
+    -(Cambiar por la dirección IP que corresponda, en este caso):
 
-        - curl 54.242.0.118:8000
-        - curl 54.242.0.118:3000
+        - curl 54.173.213.111:8000
+        - curl 54.173.213.111:3000
