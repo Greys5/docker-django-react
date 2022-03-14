@@ -70,9 +70,9 @@ t2 micro.
 
 -6- Se configuran las reglas de firewall y security group asociados a la instancia para habilitar el uso de la IP externa.
 
--7- Verificar el funcionamiento del servicio desde ip-externa:puerto ejem: http://54.173.213.111:8000/ o desde la consola:
+-7- Verificar el funcionamiento del servicio desde ip-externa:puerto ejem: http://54.242.0.118:8000/ o desde la consola:
 
     -(Cambiar por la dirección IP que corresponda, en este caso):
 
-        - curl 54.173.213.111:8000
-        - curl 54.173.213.111:3000
+        - curl 54.242.0.118:8000
+        
