@@ -49,7 +49,7 @@ Luego ejecutamos:
         > docker-compose exec db psql --username=postgres --dbname=postgres*
 
 
-# Launch EC2 Instance
+# Launch EC2 Instance y Levantar el Docker Compose 
 
 -1- Seleccionar la instancia en este caso (free tier) Amazon Linux 2 AMI  >
 t2 micro.
